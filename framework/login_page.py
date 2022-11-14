@@ -28,6 +28,9 @@ class LoginPage(Page):
                 assert False, "Login after incorrect data entered"
 
             self.cancel_button()
+            self.menu_button()
+            self.settings_button()
+            self.sing_out_button()
 
     def cancel_button(self):
         try:
@@ -36,7 +39,24 @@ class LoginPage(Page):
         except NoSuchElementException:
             assert False, 'No view after login'
 
+    def menu_button(self):
+        try:
+            btn = self.click_element(By.ID, 'com.ajaxsystems:id/menuDrawer')
+            time.sleep(10)
+        except NoSuchElementException:
+            assert False, 'No view after login'
 
+    def settings_button(self):
+        try:
+            btn = self.click_element(By.ID, 'com.ajaxsystems:id/settings')
+            time.sleep(10)
+        except NoSuchElementException:
+            assert False, 'No view after login'
 
-
+    def sing_out_button(self):
+        try:
+            btn = self.click_element(By.ID, 'com.ajaxsystems:id/accountInfoLogoutNavigate')
+            time.sleep(10)
+        except NoSuchElementException:
+            assert False, 'No view after login'
 
