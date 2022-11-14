@@ -30,7 +30,7 @@ class LoginPage(Page):
             self.cancel_button()
             self.menu_button()
             self.settings_button()
-            self.sing_out_button()
+            self.sign_out_button()
 
     def cancel_button(self):
         try:
@@ -53,7 +53,7 @@ class LoginPage(Page):
         except NoSuchElementException:
             assert False, 'No view after login'
 
-    def sing_out_button(self):
+    def sign_out_button(self):
         try:
             btn = self.click_element(By.ID, 'com.ajaxsystems:id/accountInfoLogoutNavigate')
             time.sleep(10)
