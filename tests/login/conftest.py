@@ -18,10 +18,10 @@ def press_login_button(user_login_fixture):
     yield user_login_fixture
 
 
-@pytest.fixture(params=["qa.ajax.app.122automation@gmail.com", "qa.ajax.app.automation@gmail.com"],
+@pytest.fixture(params=["qa.random.app.122automation@gmail.com", "qa.random.app.automation@gmail.com"],
                 ids=["InCorrectLogin", "CorrectLogin"])
 def mail(request):
-    exp_res = False if request.param == "qa.ajax.app.122automation@gmail.com" else True
+    exp_res = False if request.param == "qa.random.app.122automation@gmail.com" else True
     yield request.param, exp_res
 
 
